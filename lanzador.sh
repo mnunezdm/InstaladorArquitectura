@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 
 printf "${YELLOW}[INFO]${NC}: Compilando ... "
 salida=$(68kasm -l es_int.s 2>&1)
-if [[ $? != 0 ]]; then
+if [[ ! $(echo -e $salida | grep "No errors detected") ]]; then
   printf "${RED} ERROR ${NC}\n"
   echo -e "$salida"
   exit 1
