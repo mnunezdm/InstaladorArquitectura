@@ -9,7 +9,7 @@ printf "${YELLOW}[INFO]${NC}: Compilando ... "
 salida=$(68kasm -l es_int.s 2>&1)
 if [[ $? != 0 ]]; then
   printf "${RED} ERROR ${NC}\n"
-  echo $salida
+  echo -e "$salida"
   exit 1
 fi
 printf "${GREEN} OK ${NC}\n"
